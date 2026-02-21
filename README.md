@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Application Flow
 
 The OPD Management System is a server-rendered web application built using FastAPI, SQLAlchemy, MySQL, and Jinja2 templates. It manages patients, appointments, and consultations through a status-driven workflow.
@@ -137,3 +138,6 @@ uvicorn main:app --reload
 Open in browser:
 
 👉 http://127.0.0.1:8000/patients
+=======
+# OPD-Management
+>>>>>>> d363e85c6c9b36d78b9f119ee52f189887f754d9
