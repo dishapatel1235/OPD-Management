@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Patients</h3>
+
+<form method="get" class="mb-3">
+    <input type="text" name="search" placeholder="Search by name or phone" class="form-control" />
+</form>
+
+<a href="/patients/new" class="btn btn-primary mb-3">Add Patient</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Status</th>
+    </tr>
+    {% for p in patients %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.phone }}</td>
+        <td>{{ p.status.value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

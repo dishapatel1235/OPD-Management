@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Book Appointment</h3>
+
+<form method="post" action="/appointments/create">
+    <div class="mb-2">
+        <label>Patient</label>
+        <select name="patient_id" class="form-control">
+            {% for p in patients %}
+                <option value="{{ p.id }}">{{ p.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-2">
+        <input name="doctor_name" placeholder="Doctor Name" class="form-control">
+    </div>
+
+    <div class="mb-2">
+        <input type="datetime-local" name="appointment_datetime" class="form-control">
+    </div>
+
+    <button class="btn btn-success">Book</button>
+</form>
+
+{% endblock %}

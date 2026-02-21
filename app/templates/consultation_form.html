@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Consultation</h3>
+
+<form method="post" action="/consultations/create">
+    <input type="hidden" name="appointment_id" value="{{ appointment_id }}">
+    <input type="hidden" name="patient_id" value="{{ patient_id if patient_id else '' }}">
+
+    <div class="mb-2">
+        <input name="vitals_1" placeholder="Vitals 1" class="form-control">
+    </div>
+
+    <div class="mb-2">
+        <input name="vitals_2" placeholder="Vitals 2" class="form-control">
+    </div>
+
+    <div class="mb-2">
+        <textarea name="notes" placeholder="Notes" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-success">Save Consultation</button>
+</form>
+
+{% endblock %}

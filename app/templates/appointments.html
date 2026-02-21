@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Today's Appointments</h3>
+
+<a href="/appointments/new" class="btn btn-primary mb-3">Book Appointment</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date & Time</th>
+        <th>Status</th>
+        <th>Consultation</th>
+    </tr>
+    {% for a in appointments %}
+    <tr>
+    <td>{{ a.id }}</td>
+    <td>{{ a.patient.name }}</td>
+    <td>{{ a.doctor_name }}</td>
+    <td>{{ a.appointment_datetime }}</td>
+    <td>{{ a.status.value }}</td>
+    <td>
+        {% if not a.consultation %}
+            <a href="/consultations/new/{{ a.id }}" class="btn btn-sm btn-warning">Start</a>
+        {% else %}
+            {{ a.consultation.status.value }}
+        {% endif %}
+    </td>
+</tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>New Patient</h3>
+
+<form method="post" action="/patients/create">
+    <div class="mb-2">
+        <input name="name" placeholder="Name" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="gender" placeholder="Gender" class="form-control">
+    </div>
+    <div class="mb-2">
+        <input name="age" type="number" placeholder="Age" class="form-control">
+    </div>
+    <div class="mb-2">
+        <input name="phone" placeholder="Phone" class="form-control" required>
+    </div>
+    <button class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
